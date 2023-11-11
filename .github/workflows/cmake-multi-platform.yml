@@ -58,7 +58,7 @@ jobs:
       if: runner.os == 'Windows'
       shell: bash
       run: |
-        curl https://www.zlib.net/current/zlib.tar.gz
+        curl -o zlib.tar.gz https://www.zlib.net/current/zlib.tar.gz
         tar -x -f zlib.tar.gz
         cd zlib-1.3
         mkdir build
