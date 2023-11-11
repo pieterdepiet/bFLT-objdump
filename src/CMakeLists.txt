@@ -1,6 +1,10 @@
 add_executable(bflt-objdump main.c objdump.c)
 
 find_package(ZLIB)
+if(NOT ZLIB_FOUND)
+message(FATAL_ERROR "Zlib not found")
+endif()
+
 target_link_libraries(bflt-objdump ZLIB::ZLIB)
 
 include(CheckCSourceCompiles)
