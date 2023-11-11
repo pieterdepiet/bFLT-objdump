@@ -55,9 +55,8 @@ jobs:
         echo "build-output-dir=${{ github.workspace }}/build" >> "$GITHUB_OUTPUT"
 
     - name: Download zlib
-      if: runner.os == 'Windows' && ${{ steps.restore-zlib.outputs.cache-hit != 'true' }}
+      if: runner.os == 'Windows'
       shell: bash
-      working-directory: ${{ github.workspace }}/zlib
       run: |
         curl https://www.zlib.net/current/zlib.tar.gz
         tar -x -f zlib.tar.gz
